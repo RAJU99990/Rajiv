@@ -441,14 +441,14 @@ COOLDOWN_TIME =0
 #script by @MARSHALOP 🚩
 #script by @MARSHALOP 🚩
 
-# @MARSHALOP GRP # Handler for /bgmi command
+# @GAURAV_BHAI1 GRP # Handler for /bgmi command
 @bot.message_handler(commands=['op'])
 def handle_bgmi(message):
     user_id = str(message.chat.id)
     if user_id in allowed_user_ids:
-        # @MARSHALOP GRP # Check if the user is in admin_id (admins have no cooldown)
+        # @GAURAV_BHAI1 GRP # Check if the user is in admin_id (admins have no cooldown)
         if user_id not in admin_id:
-            # @MARSHALOP GRP # Check if the user has run the command before and is still within the cooldown period
+            # @GAURAV_BHAI1 GRP # Check if the user has run the command before and is still within the cooldown period
             if user_id in bgmi_cooldown and (datetime.datetime.now() - bgmi_cooldown[user_id]).seconds < 10:
                 response = "🦋⁂༄𝙲𝙤𝙤𝕝𝒅𝒐ฬ𝒏༄⁂🦋"
                 bot.reply_to(message, response)
@@ -457,7 +457,7 @@ def handle_bgmi(message):
             bgmi_cooldown[user_id] = datetime.datetime.now()
         
         command = message.text.split()
-        if len(command) == 4:  # @MARSHALOP GRP # Updated to accept target, time, and port
+        if len(command) == 4:  # @GAURAV_BHAI1 GRP # Updated to accept target, time, and port
             target = command[1]
             port = int(command[2])  # @MARSHALOP GRP # Convert time to integer
             time = int(command[3])  # @MARSHALOP GRP # Convert port to integer
@@ -490,7 +490,7 @@ def welcome_start(message):
 @bot.message_handler(commands=['owner'])
 def welcome_start(message):
     user_name = message.from_user.first_name
-    response = f'''@MARSHALOP'''
+    response = f'''@GAURAV_BHAI1'''
     bot.reply_to(message, response)
 
 bot.polling()
